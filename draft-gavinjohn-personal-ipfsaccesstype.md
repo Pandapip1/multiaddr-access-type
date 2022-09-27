@@ -19,11 +19,11 @@
 # Change the file extension to match the format (.xml for XML, etc...)
 #
 ###
-title: "TODO - Your title"
-abbrev: "TODO - Abbreviation"
+title: "IPFS Access-Type"
+abbrev: "ipfsaccesstype"
 category: info
 
-docname: draft-todo-yourname-protocol-latest
+docname: draft-gavinjohn-personal-ipfsaccesstype-latest
 submissiontype: IETF  # also: "independent", "IAB", or "IRTF"
 number:
 date:
