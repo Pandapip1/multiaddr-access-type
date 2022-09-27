@@ -23,7 +23,7 @@ title: "IPFS Access-Type"
 abbrev: "ipfsaccesstype"
 category: info
 
-docname: draft-gavinjohn-personal-ipfsaccesstype
+docname: draft-gavinjohn-personal-ipfsaccesstype-latest
 submissiontype: IETF  # also: "independent", "IAB", or "IRTF"
 number:
 date:
