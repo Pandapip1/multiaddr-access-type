@@ -7,7 +7,6 @@ docname: draft-gavinjohn-ipfsaccesstype-latest
 submissiontype: independent
 number:
 date:
-consensus: true
 v: 3
 # area: AREA
 # workgroup: WG Working Group
@@ -46,7 +45,7 @@ informative:
 
 --- abstract
 
-TODO Abstract 
+TODO Abstract
 
 --- middle
 
