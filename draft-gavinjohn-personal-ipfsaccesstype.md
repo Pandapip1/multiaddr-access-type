@@ -20,7 +20,7 @@
 #
 ###
 title: "IPFS Access-Type"
-abbrev: "TODO - Abbreviation"
+abbrev: "ipfsaccesstype"
 category: info
 
 docname: draft-todo-yourname-protocol-latest
