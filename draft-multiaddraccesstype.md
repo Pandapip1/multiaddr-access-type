@@ -1,29 +1,23 @@
 ---
+number: false
 title: Definition of the Multiaddress MIME External-Body Access-Type
 abbrev: MultiaddrAccessType
-category: std
-
 docname: draft-multiaddraccesstype-latest
-submissiontype: IETF
-number: false
-date: 2022-09-27
-v: 3
-area: Applications
-workgroup: Invdividual Submission
+
+author:
+ - fullname: Gavin John
+   email: gavinnjohn@gmail.com
+
 keyword:
  - I-D
  - multiaddress
  - multiaddr
  - accesstype
-venue:
-  github: Pandapip1/multiaddr-access-type
-  latest: https://Pandapip1.github.io/multiaddr-access-type/draft-multiaddraccesstype.html
 
-author:
- -
-    fullname: Gavin John
-    organization: N.A.
-    email: gavinnjohn@gmail.com
+submissiontype: IETF
+category: std
+area: Applications
+workgroup: Invdividual Submission
 
 normative:
   RFC1521:
@@ -37,6 +31,12 @@ normative:
       Github: https://github.com/multiformats/multiaddr
 informative:
 
+v: 3
+ipr: trust200902
+date: 2022-09-27
+venue:
+  github: Pandapip1/multiaddr-access-type
+  latest: https://Pandapip1.github.io/multiaddr-access-type/draft-multiaddraccesstype.html
 
 --- abstract
 
