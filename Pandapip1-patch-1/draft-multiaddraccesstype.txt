@@ -3,8 +3,8 @@
 
 
 Invdividual Submission                                           G. John
-Internet-Draft                                                      N.A.
-Intended status: Standards Track                       27 September 2022
+Internet-Draft                                         27 September 2022
+Intended status: Standards Track                                        
 Expires: 31 March 2023
 
 
@@ -119,5 +119,4 @@ Acknowledgments
 Author's Address
 
    Gavin John
-   N.A.
    Email: gavinnjohn@gmail.com
