@@ -2,14 +2,14 @@
 
 
 
-Network Working Group                                            G. John
+Invdividual Submission                                           G. John
 Internet-Draft                                                      N.A.
-Intended status: Informational                         28 September 2022
-Expires: 1 April 2023
+Intended status: Standards Track                       27 September 2022
+Expires: 31 March 2023
 
 
-                            IPFS Access-Type
-                 draft-gavinjohn-ipfsaccesstype-latest
+     Definition of the Multiaddress MIME External-Body Access-Type
+                    draft-multiaddraccesstype-latest
 
 Abstract
 
@@ -20,13 +20,13 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://Pandapip1.github.io/ipfs-access-type-internet-draft/draft-
-   gavinjohn-personal-ipfsaccesstype.html.  Status information for this
-   document may be found at https://datatracker.ietf.org/doc/draft-
-   gavinjohn-ipfsaccesstype/.
+   https://Pandapip1.github.io/multiaddr-access-type/draft-
+   multiaddraccesstype.html.  Status information for this document may
+   be found at https://datatracker.ietf.org/doc/draft-
+   multiaddraccesstype/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/Pandapip1/ipfs-access-type-internet-draft.
+   https://github.com/Pandapip1/multiaddr-access-type.
 
 Status of This Memo
 
@@ -43,7 +43,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 April 2023.
+   This Internet-Draft will expire on 31 March 2023.
 
 Copyright Notice
 
@@ -54,7 +54,10 @@ Copyright Notice
    Provisions Relating to IETF Documents (https://trustee.ietf.org/
    license-info) in effect on the date of publication of this document.
    Please review these documents carefully, as they describe your rights
-   and restrictions with respect to this document.
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
 
 Table of Contents
 
@@ -88,10 +91,17 @@ Table of Contents
 
 5.  Normative References
 
-   [IPFS-ARCHITECTURE]
-              Benet, J. and D. Dias, "IPFS Architecture Overview", Web
-              https://github.com/ipfs/specs/blob/main/ARCHITECTURE.md,
-              <https://github.com/ipfs/specs/blob/main/ARCHITECTURE.md>.
+   [MULTIADDR]
+              "Multiaddress Specifications",
+              Web https://multiformats.io/multiaddr/,
+              Github https://github.com/multiformats/multiaddr,
+              <https://multiformats.io/multiaddr/>.
+
+   [RFC1521]  Borenstein, N. and N. Freed, "MIME (Multipurpose Internet
+              Mail Extensions) Part One: Mechanisms for Specifying and
+              Describing the Format of Internet Message Bodies",
+              RFC 1521, DOI 10.17487/RFC1521, September 1993,
+              <https://www.rfc-editor.org/rfc/rfc1521>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
