@@ -4,8 +4,8 @@
 
 Network Working Group                                            G. John
 Internet-Draft                                                      N.A.
-Intended status: Informational                         27 September 2022
-Expires: 31 March 2023
+Intended status: Informational                         28 September 2022
+Expires: 1 April 2023
 
 
                             IPFS Access-Type
@@ -43,7 +43,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 31 March 2023.
+   This Internet-Draft will expire on 1 April 2023.
 
 Copyright Notice
 
