@@ -1,12 +1,6 @@
 name: "Continuous Integration"
 
 on:
-  push:
-    paths-ignore:
-    - README.md
-    - CONTRIBUTING.md
-    - LICENSE.md
-    - .gitignore
   pull_request:
     paths-ignore:
     - README.md
@@ -17,6 +11,8 @@ on:
 jobs:
   lint:
     name: "Lint"
+    runs-on: ubuntu-latest
+    
     steps:
     - name: "Checkout"
       uses: actions/checkout@v3
