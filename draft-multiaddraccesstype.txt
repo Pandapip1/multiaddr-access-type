@@ -13,7 +13,11 @@ Expires: 31 March 2023
 
 Abstract
 
-   TODO Abstract
+   This document defines a new access-type for message/external-body
+   MIME parts for human-readable multiaddresses (multiaddrs).
+   Multiaddrs provide future-proof, composable, and efficient content
+   addresses.  An initial list of supported protocols can be found in
+   the multiaddress specification.
 
 About This Document
 
@@ -92,7 +96,7 @@ Table of Contents
 5.  Normative References
 
    [MULTIADDR]
-              "Multiaddress Specifications",
+              "Multiaddress Specification",
               Web https://multiformats.io/multiaddr/,
               Github https://github.com/multiformats/multiaddr,
               <https://multiformats.io/multiaddr/>.
