@@ -30,6 +30,7 @@ normative:
       Web: https://multiformats.io/multiaddr/
       Github: https://github.com/multiformats/multiaddr
 informative:
+  RFC4289:
 
 v: 3
 ipr: trust200902
@@ -58,7 +59,11 @@ TODO Security
 
 # IANA Considerations
 
-This document has no IANA actions.
+This draft adds the following access type to the Access Types registry of {{?RFC4289}}:
+
+| Access Type Name |	Reference |
+|-----------------:+-----------|
+| multiaddr        | {{&SELF}} |
 
 --- back
 
