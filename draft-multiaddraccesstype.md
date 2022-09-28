@@ -23,7 +23,7 @@ normative:
   RFC1521:
   MULTIADDR:
     target: https://multiformats.io/multiaddr/
-    title: Multiaddress Specifications
+    title: Multiaddress Specification
     author: false
     date: false
     seriesinfo:
@@ -40,7 +40,7 @@ venue:
 
 --- abstract
 
-TODO Abstract
+This document defines a new access-type for message/external-body MIME parts for human-readable multiaddresses (multiaddrs). Multiaddrs provide future-proof, composable, and efficient content addresses. An initial list of supported protocols can be found in the multiaddress specification.
 
 --- middle
 
@@ -48,25 +48,22 @@ TODO Abstract
 
 TODO Introduction
 
-
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
-
 
 # Security Considerations
 
 TODO Security
 
-
 # IANA Considerations
 
 This document has no IANA actions.
 
-
 --- back
 
 # Acknowledgments
+
 {:numbered="false"}
 
 TODO acknowledge.
