@@ -69,7 +69,9 @@ Table of Contents
    2.  Conventions and Definitions
    3.  Security Considerations
    4.  IANA Considerations
-   5.  Normative References
+   5.  References
+     5.1.  Normative References
+     5.2.  Informative References
    Acknowledgments
    Author's Address
 
@@ -91,9 +93,20 @@ Table of Contents
 
 4.  IANA Considerations
 
-   This document has no IANA actions.
+   This draft adds the following access type to the Access Types
+   registry of [RFC4289]:
 
-5.  Normative References
+             +==================+===========================+
+             | Access Type Name | Reference                 |
+             +==================+===========================+
+             |        multiaddr | [I-D.multiaddraccesstype] |
+             +------------------+---------------------------+
+
+                                 Table 1
+
+5.  References
+
+5.1.  Normative References
 
    [MULTIADDR]
               "Multiaddress Specification",
@@ -115,6 +128,13 @@ Table of Contents
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+5.2.  Informative References
+
+   [RFC4289]  Freed, N. and J. Klensin, "Multipurpose Internet Mail
+              Extensions (MIME) Part Four: Registration Procedures",
+              BCP 13, RFC 4289, DOI 10.17487/RFC4289, December 2005,
+              <https://www.rfc-editor.org/rfc/rfc4289>.
 
 Acknowledgments
 
