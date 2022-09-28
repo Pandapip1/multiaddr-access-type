@@ -5,6 +5,7 @@ category: info
 
 docname: draft-gavinjohn-ipfsaccesstype-latest
 submissiontype: independent
+
 number:
 date:
 v: 3
@@ -41,7 +42,7 @@ normative:
     seriesinfo:
       Web: https://github.com/ipfs/specs/blob/main/ARCHITECTURE.md
 informative:
-
+---
 
 --- abstract
 
