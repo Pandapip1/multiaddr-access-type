@@ -1,17 +1,17 @@
-# IPFS Access-Type
+# Definition of the Multiaddress MIME External-Body Access-Type
 
-This is the working area for the individual Internet-Draft, "IPFS Access-Type".
+This is the working area for the individual Internet-Draft, "Definition of the Multiaddress MIME External-Body Access-Type".
 
-* [Editor's Copy](https://Pandapip1.github.io/ipfs-access-type-internet-draft/#go.draft-gavinjohn-personal-ipfsaccesstype.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-gavinjohn-personal-ipfsaccesstype)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-gavinjohn-personal-ipfsaccesstype)
-* [Compare Editor's Copy to Individual Draft](https://Pandapip1.github.io/ipfs-access-type-internet-draft/#go.draft-gavinjohn-personal-ipfsaccesstype.diff)
+* [Editor's Copy](https://Pandapip1.github.io/multiaddr-access-type/#go.draft-multiaddraccesstype.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-multiaddraccesstype)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-multiaddraccesstype)
+* [Compare Editor's Copy to Individual Draft](https://Pandapip1.github.io/multiaddr-access-type/#go.draft-multiaddraccesstype.diff)
 
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/Pandapip1/ipfs-access-type-internet-draft/blob/main/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/Pandapip1/multiaddr-access-type/blob/main/CONTRIBUTING.md).
 
 Contributions can be made by creating pull requests.
 The GitHub interface supports creating pull requests using the Edit (✏) button.
