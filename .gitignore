@@ -17,7 +17,7 @@
 /versioned/
 Gemfile.lock
 archive.json
-draft-gavinjohn-personal-ipfsaccesstype.xml
+draft-multiaddraccesstype.xml
 package-lock.json
 report.xml
 !requirements.txt
