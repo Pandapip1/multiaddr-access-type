@@ -4,7 +4,7 @@ abbrev: MultiaddrAccessType
 category: std
 
 docname: draft-multiaddraccesstype-latest
-submissiontype: independent
+submissiontype: IETF
 number: false
 date: 2022-09-27
 v: 3
