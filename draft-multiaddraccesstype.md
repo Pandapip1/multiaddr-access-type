@@ -17,7 +17,7 @@ keyword:
 author:
  - fullname: Gavin John
    email: gavinnjohn@gmail.com
-   
+
  - fullname: Ned Freed
    org: Innosoft International, Inc.
    email: ned@innosoft.com
@@ -26,7 +26,7 @@ author:
    city: West Covina, CA
    code: 91790
    country: USA
-   
+
  - fullname: Keith Moore
    org: University of Tennessee
    email: moore@cs.utk.edu
