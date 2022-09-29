@@ -6,8 +6,10 @@
 <meta content="initial-scale=1.0" name="viewport">
 <title>Definition of the Multiaddress MIME External-Body Access-Type</title>
 <meta content="Gavin John" name="author">
+<meta content="Ned Freed" name="author">
+<meta content="Keith Moore" name="author">
 <meta content="
-       This document defines a new access-type for message/external-body MIME parts for human-readable multiaddresses (multiaddrs). Multiaddrs provide future-proof, composable, and efficient content addresses. An initial list of supported protocols can be found in the multiaddress specification. 
+       This document defines a new access-type for  message/external-body  MIME parts for human-readable multiaddresses (multiaddrs). Multiaddrs provide future-proof, composable, and efficient content addresses. An initial list of supported protocols can be found in the multiaddress specification. 
     " name="description">
 <meta content="xml2rfc 3.14.2" name="generator">
 <meta content="Internet-Draft" name="keyword">
@@ -1041,7 +1043,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <td class="right">September 2022</td>
 </tr></thead>
 <tfoot><tr>
-<td class="left">John</td>
+<td class="left">John, et al.</td>
 <td class="center">Expires 31 March 2023</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
@@ -1061,10 +1063,18 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
 <dd class="expires"><time datetime="2023-03-31">31 March 2023</time></dd>
-<dt class="label-authors">Author:</dt>
+<dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
       <div class="author-name">G. John</div>
+</div>
+<div class="author">
+      <div class="author-name">N. Freed</div>
+<div class="org">Innosoft International, Inc.</div>
+</div>
+<div class="author">
+      <div class="author-name">K. Moore</div>
+<div class="org">University of Tennessee</div>
 </div>
 </dd>
 </dl>
@@ -1072,7 +1082,7 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
 <h1 id="title">Definition of the Multiaddress MIME External-Body Access-Type</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">This document defines a new access-type for message/external-body MIME parts for human-readable multiaddresses (multiaddrs). Multiaddrs provide future-proof, composable, and efficient content addresses. An initial list of supported protocols can be found in the multiaddress specification.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This document defines a new access-type for <code>message/external-body</code> MIME parts for human-readable multiaddresses (multiaddrs). Multiaddrs provide future-proof, composable, and efficient content addresses. An initial list of supported protocols can be found in the multiaddress specification.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1157,10 +1167,10 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#appendix-A" class="xref"></a><a href="#name-acknowledgments" class="xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#appendix-A" class="xref">Appendix A</a>.  <a href="#name-acknowledgments" class="xref">Acknowledgments</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#appendix-B" class="xref"></a><a href="#name-authors-address" class="xref">Author's Address</a></p>
+            <p id="section-toc.1-1.7.1"><a href="#appendix-B" class="xref"></a><a href="#name-authors-addresses" class="xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1171,7 +1181,10 @@ svg :is([stroke="fill"], [fill^="#fff"]) {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">TODO Introduction<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1">The Multipurpose Internet Message Extensions (MIME) define a facility whereby an object can contain a reference or pointer to some form of data rather than the actual data itself. This facility is embodied in the <code>message/external-body</code> media type defined in <span>[<a href="#RFC1521" class="xref">RFC1521</a>]</span>. Use of this facility is growing as a means of conserving bandwidth when large objects are sent to large mailing lists.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">Each <code>message/external-body</code> reference must specify a mechanism whereby the actual data can be retrieved. These mechanisms are called access types, and <span>[<a href="#RFC1521" class="xref">RFC1521</a>]</span> defines an initial set of access types.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">Multiaddresses, or multiaddrs, also provide a means by which remote data can be retrieved automatically. Multiaddrs support addresses for any network protocol, are self-describing, conform to a simple syntax, have human-readable and efficient machine-readable representations, and encapsulate well. For the purposes of this document, human-readable multiaddrs are used since they are more formally defined.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4">Multiaddrs are exclusively used for content addressing, so considerations about only using mechanisms that retrieve data do not apply.<a href="#section-1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1248,6 +1261,10 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
+<dt id="RFC2017">[RFC2017]</dt>
+        <dd>
+<span class="refAuthor">Freed, N.</span>, <span class="refAuthor">Moore, K.</span>, and <span class="refAuthor">A. Cargille</span>, <span class="refTitle">"Definition of the URL MIME External-Body Access-Type"</span>, <span class="seriesInfo">RFC 2017</span>, <span class="seriesInfo">DOI 10.17487/RFC2017</span>, <time datetime="1996-10" class="refDate">October 1996</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2017">https://www.rfc-editor.org/rfc/rfc2017</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC4289">[RFC4289]</dt>
       <dd>
 <span class="refAuthor">Freed, N.</span> and <span class="refAuthor">J. Klensin</span>, <span class="refTitle">"Multipurpose Internet Mail Extensions (MIME) Part Four: Registration Procedures"</span>, <span class="seriesInfo">BCP 13</span>, <span class="seriesInfo">RFC 4289</span>, <span class="seriesInfo">DOI 10.17487/RFC4289</span>, <time datetime="2005-12" class="refDate">December 2005</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4289">https://www.rfc-editor.org/rfc/rfc4289</a>&gt;</span>. </dd>
@@ -1258,21 +1275,51 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <div id="acknowledgments">
 <section id="appendix-A">
       <h2 id="name-acknowledgments">
-<a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
+<a href="#appendix-A" class="section-number selfRef">Appendix A. </a><a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
       </h2>
-<p id="appendix-A-1">TODO acknowledge.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+<p id="appendix-A-1">The content of this document was heavily derived from <span>[<a href="#RFC2017" class="xref">RFC2017</a>]</span>. The authors of that RFC have been added as authors of this document, but have not reviewed nor endorsed it.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="authors-addresses">
 <section id="appendix-B">
-      <h2 id="name-authors-address">
-<a href="#name-authors-address" class="section-name selfRef">Author's Address</a>
+      <h2 id="name-authors-addresses">
+<a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>
 <address class="vcard">
         <div dir="auto" class="left"><span class="fn nameRole">Gavin John</span></div>
 <div class="email">
 <span>Email:</span>
 <a href="mailto:gavinnjohn@gmail.com" class="email">gavinnjohn@gmail.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Ned Freed</span></div>
+<div dir="auto" class="left"><span class="org">Innosoft International, Inc.</span></div>
+<div dir="auto" class="left"><span class="street-address">1050 East Garvey Avenue South</span></div>
+<div dir="auto" class="left">
+<span class="locality">West Covina, CA</span>,  <span class="postal-code">91790</span>
+</div>
+<div dir="auto" class="left"><span class="country-name">United States of America</span></div>
+<div class="tel">
+<span>Phone:</span>
+<a href="tel:+1%20818%20919%203600" class="tel">+1 818 919 3600</a>
+</div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:ned@innosoft.com" class="email">ned@innosoft.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Keith Moore</span></div>
+<div dir="auto" class="left"><span class="org">University of Tennessee</span></div>
+<div dir="auto" class="left"><span class="street-address">107 Ayres Hall</span></div>
+<div dir="auto" class="left">
+<span class="locality">Knoxville, TN</span>,  <span class="postal-code">37996-1301</span>
+</div>
+<div dir="auto" class="left"><span class="country-name">United States of America</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:moore@cs.utk.edu" class="email">moore@cs.utk.edu</a>
 </div>
 </address>
 </section>

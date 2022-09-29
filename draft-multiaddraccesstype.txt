@@ -3,9 +3,12 @@
 
 
 Invdividual Submission                                           G. John
-Internet-Draft                                         27 September 2022
-Intended status: Standards Track                                        
-Expires: 31 March 2023
+Internet-Draft                                                          
+Intended status: Standards Track                                N. Freed
+Expires: 31 March 2023                      Innosoft International, Inc.
+                                                                K. Moore
+                                                 University of Tennessee
+                                                       27 September 2022
 
 
      Definition of the Multiaddress MIME External-Body Access-Type
@@ -72,12 +75,33 @@ Table of Contents
    5.  References
      5.1.  Normative References
      5.2.  Informative References
-   Acknowledgments
-   Author's Address
+   Appendix A.  Acknowledgments
+   Authors' Addresses
 
 1.  Introduction
 
-   TODO Introduction
+   The Multipurpose Internet Message Extensions (MIME) define a facility
+   whereby an object can contain a reference or pointer to some form of
+   data rather than the actual data itself.  This facility is embodied
+   in the message/external-body media type defined in [RFC1521].  Use of
+   this facility is growing as a means of conserving bandwidth when
+   large objects are sent to large mailing lists.
+
+   Each message/external-body reference must specify a mechanism whereby
+   the actual data can be retrieved.  These mechanisms are called access
+   types, and [RFC1521] defines an initial set of access types.
+
+   Multiaddresses, or multiaddrs, also provide a means by which remote
+   data can be retrieved automatically.  Multiaddrs support addresses
+   for any network protocol, are self-describing, conform to a simple
+   syntax, have human-readable and efficient machine-readable
+   representations, and encapsulate well.  For the purposes of this
+   document, human-readable multiaddrs are used since they are more
+   formally defined.
+
+   Multiaddrs are exclusively used for content addressing, so
+   considerations about only using mechanisms that retrieve data do not
+   apply.
 
 2.  Conventions and Definitions
 
@@ -131,16 +155,40 @@ Table of Contents
 
 5.2.  Informative References
 
+   [RFC2017]  Freed, N., Moore, K., and A. Cargille, "Definition of the
+              URL MIME External-Body Access-Type", RFC 2017,
+              DOI 10.17487/RFC2017, October 1996,
+              <https://www.rfc-editor.org/rfc/rfc2017>.
+
    [RFC4289]  Freed, N. and J. Klensin, "Multipurpose Internet Mail
               Extensions (MIME) Part Four: Registration Procedures",
               BCP 13, RFC 4289, DOI 10.17487/RFC4289, December 2005,
               <https://www.rfc-editor.org/rfc/rfc4289>.
 
-Acknowledgments
+Appendix A.  Acknowledgments
 
-   TODO acknowledge.
+   The content of this document was heavily derived from [RFC2017].  The
+   authors of that RFC have been added as authors of this document, but
+   have not reviewed nor endorsed it.
 
-Author's Address
+Authors' Addresses
 
    Gavin John
    Email: gavinnjohn@gmail.com
+
+
+   Ned Freed
+   Innosoft International, Inc.
+   1050 East Garvey Avenue South
+   West Covina, CA,  91790
+   United States of America
+   Phone: +1 818 919 3600
+   Email: ned@innosoft.com
+
+
+   Keith Moore
+   University of Tennessee
+   107 Ayres Hall
+   Knoxville, TN,  37996-1301
+   United States of America
+   Email: moore@cs.utk.edu
