@@ -47,7 +47,6 @@ normative:
       Web: https://multiformats.io/multiaddr/
       Github: https://github.com/multiformats/multiaddr
 informative:
-  RFC822:
   RFC4289:
   RFC2017:
 entity:
