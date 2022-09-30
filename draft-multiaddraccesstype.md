@@ -38,6 +38,7 @@ author:
 normative:
   RFC822:
   RFC1521:
+  RFC1738:
   MULTIADDR:
     target: https://multiformats.io/multiaddr/
     title: Multiaddress Specification
@@ -102,7 +103,7 @@ multiaddr-word := token
 
 The syntax of an actual multiaddr string is given in {{MULTIADDR}}. Multiaddr strings can be of any length and can contain arbitrary character content. This presents problems when multiaddrs are embedded in MIME body part headers that are wrapped according to {{!RFC822}} rules. For this reason they are transformed into a `multiaddr-parameter` for inclusion in a `message/external-body` content type specification as follows:
 
-1. A check is made to make sure that all occurrences of SPACE, CTLs, double quotes, backslashes, and 8-bit characters in the multiaddr string are encoded using the URL encoding scheme specified in {{!RFC 1738}}. Any unencoded occurrences of these characters must be encoded. Note that the result of this operation results may result in a multiaddr that is different than the original, and will need to be decoded.
+1. A check is made to make sure that all occurrences of SPACE, CTLs, double quotes, backslashes, and 8-bit characters in the multiaddr string are encoded using the URL encoding scheme specified in {{!RFC1738}}. Any unencoded occurrences of these characters must be encoded. Note that the result of this operation results may result in a multiaddr that is different than the original, and will need to be decoded.
 2. The resulting multiaddr string is broken up into substrings of 40 characters or less.
 3. Each substring is placed in a `multiaddr-parameter` string as a `multiaddr-word`, separated by one or more spaces. The enclosing quotes are always included for consistency.
 
@@ -110,7 +111,7 @@ Extraction of the multiaddr string from the `multiaddr-parameter` follows a simi
 
 1. The enclosing quotes are removed.
 2. Any linear whitespace is removed.
-3. The remaining material is decoded using the URL decoding scheme specified in {{!RFC 1738}}. The result of this operation is the original multiaddr.
+3. The remaining material is decoded using the URL decoding scheme specified in {{!RFC1738}}. The result of this operation is the original multiaddr.
 
 The following example shows how a long muliaddr is handled:
 
