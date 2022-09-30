@@ -101,7 +101,7 @@ multiaddr-word := token
                  ; Must not exceed 40 characters in length
 ```
 
-The syntax of an actual multiaddr string is given in {{!MULTIADDR}}. Multiaddr strings can be of any length and can contain arbitrary character content. This presents problems when multiaddrs are embedded in MIME body part headers that are wrapped according to {{?RFC822}} rules. For this reason they are transformed into a `multiaddr-parameter` for inclusion in a `message/external-body` `content-type` specification as follows:
+The syntax of an actual multiaddr string is given in {{MULTIADDR}}. Multiaddr strings can be of any length and can contain arbitrary character content. This presents problems when multiaddrs are embedded in MIME body part headers that are wrapped according to {{?RFC822}} rules. For this reason they are transformed into a `multiaddr-parameter` for inclusion in a `message/external-body` `content-type` specification as follows:
 
 1. A check is made to make sure that all occurrences of SPACE, CTLs, double quotes, backslashes, and 8-bit characters in the URL string are already encoded using the URL encoding scheme specified in RFC 1738. Any unencoded occurrences of these characters must be encoded.  Note that the result of this operation is nothing more than a different representation of the original URL.
 2. The resulting URL string is broken up into substrings of 40 characters or less.
