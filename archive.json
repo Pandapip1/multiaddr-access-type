@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2022-09-29T02:38:09.561108+00:00",
+  "timestamp": "2022-10-02T02:42:46.765176+00:00",
   "repo": "Pandapip1/multiaddr-access-type",
   "labels": [
     {
@@ -295,6 +295,62 @@
       "mergedBy": "Pandapip1",
       "mergeCommit": {
         "oid": "d129c0bf0a0c79200a8c7e9385fb6396bd2ec012"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 10,
+      "id": "PR_kwDOIE-5Zs4_29mB",
+      "title": "Add introduction and acknowledge the authors of RFC 2017",
+      "url": "https://github.com/Pandapip1/multiaddr-access-type/pull/10",
+      "state": "MERGED",
+      "author": "Pandapip1",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Signed-off-by: Pandapip1 <45835846+Pandapip1@users.noreply.github.com>",
+      "createdAt": "2022-09-29T13:49:11Z",
+      "updatedAt": "2022-09-29T13:52:47Z",
+      "baseRepository": "Pandapip1/multiaddr-access-type",
+      "baseRefName": "main",
+      "baseRefOid": "f0568b9b0e8e0a26087ffd66e12ca6f4a804e335",
+      "headRepository": "Pandapip1/multiaddr-access-type",
+      "headRefName": "Pandapip1-patch-1",
+      "headRefOid": "4f89a0d2181becb02db8a7c894d39c1d50a826b0",
+      "closedAt": "2022-09-29T13:52:46Z",
+      "mergedAt": "2022-09-29T13:52:46Z",
+      "mergedBy": "Pandapip1",
+      "mergeCommit": {
+        "oid": "e0aa5c21c31147b75c88832cdb9768ba371bf780"
+      },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 11,
+      "id": "PR_kwDOIE-5Zs4_3JuA",
+      "title": "Initial Specification",
+      "url": "https://github.com/Pandapip1/multiaddr-access-type/pull/11",
+      "state": "MERGED",
+      "author": "Pandapip1",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Signed-off-by: Pandapip1 <45835846+Pandapip1@users.noreply.github.com>",
+      "createdAt": "2022-09-29T14:23:51Z",
+      "updatedAt": "2022-09-30T12:56:26Z",
+      "baseRepository": "Pandapip1/multiaddr-access-type",
+      "baseRefName": "main",
+      "baseRefOid": "e0aa5c21c31147b75c88832cdb9768ba371bf780",
+      "headRepository": "Pandapip1/multiaddr-access-type",
+      "headRefName": "Pandapip1-initial-spec",
+      "headRefOid": "081b410b5caefcfb0636bd4ce62a6c5480afbf1a",
+      "closedAt": "2022-09-30T12:56:25Z",
+      "mergedAt": "2022-09-30T12:56:25Z",
+      "mergedBy": "Pandapip1",
+      "mergeCommit": {
+        "oid": "13a7aa20b7ba6c712045fe5ab2b870c89cc0d41a"
       },
       "comments": [],
       "reviews": []
