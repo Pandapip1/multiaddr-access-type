@@ -130,6 +130,15 @@ Some multiaddrs may provide access to multiple versions of the same object in di
 
 Due to these considerations, the following restriction is imposed: When multiaddrs are used in the context of an access type, only those versions of an object whose content type agrees with that specified by the inner `message/external-body` header can be retrieved and used.
 
+# Rationale
+
+The `message/external-body` MIME type is useful as it is a well-defined mechanism for referencing external data. Referencing external data itself is useful:
+
+- Unnecessary bandwidth usage is avoided by not requesting and sending the same data.
+- When there are multiple data locations, clients can select the fastest one.
+- Senders can serve data that they can't access themselves.
+  - This may be particularly useful for sandboxed or blockchain-based servers.
+
 # Security Considerations
 
 The security considerations of using multiaddrs in the context of a MIME access type are no different from the concerns that arise from their use in other contexts.
