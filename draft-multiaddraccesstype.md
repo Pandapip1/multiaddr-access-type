@@ -132,7 +132,7 @@ Due to these considerations, the following restriction is imposed: When multiadd
 
 # Security Considerations
 
-TODO Security
+The security considerations of using multiaddrs in the context of a MIME access type are no different from the concerns that arise from their use in other contexts.
 
 # IANA Considerations
 
