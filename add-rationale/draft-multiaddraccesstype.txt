@@ -1,0 +1,308 @@
+
+
+
+
+Invdividual Submission                                           G. John
+Internet-Draft                                                          
+Intended status: Standards Track                                N. Freed
+Expires: 31 March 2023                      Innosoft International, Inc.
+                                                                K. Moore
+                                                 University of Tennessee
+                                                       27 September 2022
+
+
+     Definition of the Multiaddress MIME External-Body Access-Type
+                    draft-multiaddraccesstype-latest
+
+Abstract
+
+   This document defines a new access-type for message/external-body
+   MIME parts for human-readable multiaddresses (multiaddrs).
+   Multiaddrs provide future-proof, composable, and efficient content
+   addresses.  An initial list of supported protocols can be found in
+   the multiaddress specification.
+
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at
+   https://Pandapip1.github.io/multiaddr-access-type/draft-
+   multiaddraccesstype.html.  Status information for this document may
+   be found at https://datatracker.ietf.org/doc/draft-
+   multiaddraccesstype/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/Pandapip1/multiaddr-access-type.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 31 March 2023.
+
+Copyright Notice
+
+   Copyright (c) 2022 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Definition of the Multiaddr Access-Type
+     2.1.  Syntax and Use of the multiaddr parameter
+   3.  Rationale
+   4.  Security Considerations
+   5.  IANA Considerations
+   6.  References
+     6.1.  Normative References
+     6.2.  Informative References
+   Appendix A.  Acknowledgments
+   Authors' Addresses
+
+1.  Introduction
+
+   The Multipurpose Internet Message Extensions (MIME) define a facility
+   whereby an object can contain a reference or pointer to some form of
+   data rather than the actual data itself.  This facility is embodied
+   in the message/external-body media type defined in [RFC1521].  Use of
+   this facility is growing as a means of conserving bandwidth in
+   various situations.
+
+   Each message/external-body reference must specify a mechanism whereby
+   the actual data can be retrieved.  These mechanisms are called access
+   types, and [RFC1521] defines an initial set of access types.
+
+   Multiaddresses, or multiaddrs, also provide a means by which remote
+   data can be retrieved automatically.  Multiaddrs support addresses
+   for any network protocol, are self-describing, conform to a simple
+   syntax, have human-readable and efficient machine-readable
+   representations, and encapsulate well.  For the purposes of this
+   document, human-readable multiaddrs are used since they are more
+   formally defined.
+
+   Multiaddrs are exclusively used for content addressing, so
+   considerations about only using mechanisms that retrieve data do not
+   apply.
+
+2.  Definition of the Multiaddr Access-Type
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+   The multiaddr access type is defined as follows:
+
+   1.  The name of the access type is "multiaddr".
+
+   2.  A new message/external-body content-type parameter is used to
+       actually store the multiaddress string.  The name of the
+       parameter is also "multiaddr", and this parameter is mandatory
+       for this access type.  The syntax and use of this parameter is
+       specified in the next section.
+
+   3.  The phantom body area of the message/external-body is not used
+       and should be left blank.
+
+   For example, the following message illustrates how the multiaddr
+   access-type is used:
+
+   text Content-type: message/external-body; access-type=multiaddr;
+   multiaddr="/http/example.com/index.html"
+
+2.1.  Syntax and Use of the multiaddr parameter
+
+   Using the ANBF notations and definitions of [RFC822] and [RFC1521],
+   the syntax of the multiaddr parameter is as follows:
+
+   ```text multiaddr-parameter := <"> multiaddr-word _(_LWSP-char
+   multiaddr-word) <">
+
+   multiaddr-word := token ; Must not exceed 40 characters in length ```
+
+   The syntax of an actual multiaddr string is given in [MULTIADDR].
+   Multiaddr strings can be of any length and can contain arbitrary
+   character content.  This presents problems when multiaddrs are
+   embedded in MIME body part headers that are wrapped according to
+   [RFC822] rules.  For this reason they are transformed into a
+   multiaddr-parameter for inclusion in a message/external-body content
+   type specification as follows:
+
+   1.  A check is made to make sure that all occurrences of SPACE, CTLs,
+       double quotes, backslashes, and 8-bit characters in the multiaddr
+       string are encoded using the URL encoding scheme specified in
+       [RFC1738].  Any unencoded occurrences of these characters must be
+       encoded.  Note that the result of this operation results may
+       result in a multiaddr that is different than the original, and
+       will need to be decoded.
+
+   2.  The resulting multiaddr string is broken up into substrings of 40
+       characters or less.
+
+   3.  Each substring is placed in a multiaddr-parameter string as a
+       multiaddr-word, separated by one or more spaces.  The enclosing
+       quotes are always included for consistency.
+
+   Extraction of the multiaddr string from the multiaddr-parameter
+   follows a similar process:
+
+   1.  The enclosing quotes are removed.
+
+   2.  Any linear whitespace is removed.
+
+   3.  The remaining material is decoded using the URL decoding scheme
+       specified in [RFC1738].  The result of this operation is the
+       original multiaddr.
+
+   The following example shows how a long muliaddr is handled:
+
+   ```text Content-type: message/external-body; access-type=multiaddr;
+   multiaddr="/dns4/example.com/tcp/443/tls/sni/exampl
+   e.com/http/example.com/index.html"
+
+   Content-type: text/html Content-Transfer-Encoding: binary
+
+   THIS IS NOT REALLY THE BODY! ```
+
+   Some multiaddrs may provide access to multiple versions of the same
+   object in different formats.  The HTTP protocol has this capability,
+   for example.  However, applications may not expect to receive
+   something whose type doesn't agree with that expressed in the
+   message/external-body, and may in fact have already made irrevocable
+   choices based on this information.
+
+   Due to these considerations, the following restriction is imposed:
+   When multiaddrs are used in the context of an access type, only those
+   versions of an object whose content type agrees with that specified
+   by the inner message/external-body header can be retrieved and used.
+
+3.  Rationale
+
+   The message/external-body MIME type is useful as it is a well-defined
+   mechanism for referencing external data.  Referencing external data
+   itself is useful:
+
+   *  Unnecessary bandwidth usage is avoided by not requesting and
+      sending the same data.
+
+   *  When there are multiple data locations, clients can select the
+      fastest one.
+
+   *  Senders can serve data that they can't access themselves.
+
+      -  This may be particularly useful for sandboxed or blockchain-
+         based servers.
+
+4.  Security Considerations
+
+   The security considerations of using multiaddrs in the context of a
+   MIME access type are no different from the concerns that arise from
+   their use in other contexts.
+
+5.  IANA Considerations
+
+   This draft adds the following access type to the Access Types
+   registry of [RFC4289]:
+
+             +==================+===========================+
+             | Access Type Name | Reference                 |
+             +==================+===========================+
+             |        multiaddr | [I-D.multiaddraccesstype] |
+             +------------------+---------------------------+
+
+                                 Table 1
+
+6.  References
+
+6.1.  Normative References
+
+   [MULTIADDR]
+              "Multiaddress Specification",
+              Web https://multiformats.io/multiaddr/,
+              Github https://github.com/multiformats/multiaddr,
+              <https://multiformats.io/multiaddr/>.
+
+   [RFC1521]  Borenstein, N. and N. Freed, "MIME (Multipurpose Internet
+              Mail Extensions) Part One: Mechanisms for Specifying and
+              Describing the Format of Internet Message Bodies",
+              RFC 1521, DOI 10.17487/RFC1521, September 1993,
+              <https://www.rfc-editor.org/rfc/rfc1521>.
+
+   [RFC1738]  Berners-Lee, T., Masinter, L., and M. McCahill, "Uniform
+              Resource Locators (URL)", RFC 1738, DOI 10.17487/RFC1738,
+              December 1994, <https://www.rfc-editor.org/rfc/rfc1738>.
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+   [RFC822]   Crocker, D., "STANDARD FOR THE FORMAT OF ARPA INTERNET
+              TEXT MESSAGES", STD 11, RFC 822, DOI 10.17487/RFC0822,
+              August 1982, <https://www.rfc-editor.org/rfc/rfc822>.
+
+6.2.  Informative References
+
+   [RFC2017]  Freed, N., Moore, K., and A. Cargille, "Definition of the
+              URL MIME External-Body Access-Type", RFC 2017,
+              DOI 10.17487/RFC2017, October 1996,
+              <https://www.rfc-editor.org/rfc/rfc2017>.
+
+   [RFC4289]  Freed, N. and J. Klensin, "Multipurpose Internet Mail
+              Extensions (MIME) Part Four: Registration Procedures",
+              BCP 13, RFC 4289, DOI 10.17487/RFC4289, December 2005,
+              <https://www.rfc-editor.org/rfc/rfc4289>.
+
+Appendix A.  Acknowledgments
+
+   The content of this document was heavily derived from [RFC2017].  The
+   authors of that RFC have been added as authors of this document, but
+   have not reviewed nor endorsed it.
+
+Authors' Addresses
+
+   Gavin John
+   Email: gavinnjohn@gmail.com
+
+
+   Ned Freed
+   Innosoft International, Inc.
+   1050 East Garvey Avenue South
+   West Covina, CA,  91790
+   United States of America
+   Phone: +1 818 919 3600
+   Email: ned@innosoft.com
+
+
+   Keith Moore
+   University of Tennessee
+   107 Ayres Hall
+   Knoxville, TN,  37996-1301
+   United States of America
+   Email: moore@cs.utk.edu
