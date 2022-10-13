@@ -71,11 +71,12 @@ Table of Contents
    1.  Introduction
    2.  Definition of the Multiaddr Access-Type
      2.1.  Syntax and Use of the multiaddr parameter
-   3.  Security Considerations
-   4.  IANA Considerations
-   5.  References
-     5.1.  Normative References
-     5.2.  Informative References
+   3.  Rationale
+   4.  Security Considerations
+   5.  IANA Considerations
+   6.  References
+     6.1.  Normative References
+     6.2.  Informative References
    Appendix A.  Acknowledgments
    Authors' Addresses
 
@@ -197,13 +198,30 @@ Table of Contents
    versions of an object whose content type agrees with that specified
    by the inner message/external-body header can be retrieved and used.
 
-3.  Security Considerations
+3.  Rationale
+
+   The message/external-body MIME type is useful as it is a well-defined
+   mechanism for referencing external data.  Referencing external data
+   itself is useful:
+
+   *  Unnecessary bandwidth usage is avoided by not requesting and
+      sending the same data.
+
+   *  When there are multiple data locations, clients can select the
+      fastest one.
+
+   *  Senders can serve data that they can't access themselves.
+
+      -  This may be particularly useful for sandboxed or blockchain-
+         based servers.
+
+4.  Security Considerations
 
    The security considerations of using multiaddrs in the context of a
    MIME access type are no different from the concerns that arise from
    their use in other contexts.
 
-4.  IANA Considerations
+5.  IANA Considerations
 
    This draft adds the following access type to the Access Types
    registry of [RFC4289]:
@@ -216,9 +234,9 @@ Table of Contents
 
                                  Table 1
 
-5.  References
+6.  References
 
-5.1.  Normative References
+6.1.  Normative References
 
    [MULTIADDR]
               "Multiaddress Specification",
@@ -249,7 +267,7 @@ Table of Contents
               TEXT MESSAGES", STD 11, RFC 822, DOI 10.17487/RFC0822,
               August 1982, <https://www.rfc-editor.org/rfc/rfc822>.
 
-5.2.  Informative References
+6.2.  Informative References
 
    [RFC2017]  Freed, N., Moore, K., and A. Cargille, "Definition of the
               URL MIME External-Body Access-Type", RFC 2017,
